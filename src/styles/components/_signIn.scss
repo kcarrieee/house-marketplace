@@ -1,0 +1,119 @@
+.content-block{
+    text-align: center;
+    width: 100%;
+    padding: 30px;
+}
+
+.sign-header{
+    margin-top: 30px;
+    h3{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 500;
+        font-size: clamp(1.8rem, 0.25rem + 4vw, 2.5rem);
+
+    }
+}
+.container-input{
+    height: 44px;
+    background: #383838;
+    box-shadow: inset 0px 1px 0px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+    
+
+    .visible-pass{
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
+    svg{
+        color:#5a5a5a;
+        margin-right: 10px;
+        margin-left: 10px;
+       
+    }
+    .email-input{
+        background: none;
+        outline: none;
+        border: none;
+        color: #fff;
+        height: 100%;
+    }
+    .password-input{
+        background: none;
+        outline: none;
+        border: none;
+        color: #fff;
+        height: 100%;
+        
+    }
+    
+
+}
+
+
+
+
+.button-sign {
+  background-color: #FFFFFF;
+  border: 1px solid #222222;
+  border-radius: 8px;
+  color: #222222;
+  cursor: pointer;
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  margin-block: 10px;
+  outline: none;
+  padding: 13px 23px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  touch-action: manipulation;
+  transition: box-shadow .2s,-ms-transform .1s,-webkit-transform .1s,transform .1s;
+  user-select: none;
+  -webkit-user-select: none;
+  width: 100%;
+}
+
+.button-sign:focus-visible {
+  box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
+  transition: box-shadow .2s;
+}
+
+.button-sign:active {
+  background-color: #F7F7F7;
+  border-color: #000000;
+  transform: scale(.96);
+}
+
+.button-sign:disabled {
+  border-color: #DDDDDD;
+  color: #DDDDDD;
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+
+.forgot-password-link{
+  text-decoration: none;
+  color: grey;
+  margin-top: 30px;
+}
+.register-link{
+  text-decoration: none;
+  color: grey;
+  margin-top: 20px;
+  span{
+    color: rgb(222, 222, 222);
+  }
+}

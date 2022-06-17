@@ -1,0 +1,26 @@
+@import './components/all';
+@import 'variables';
+@import url('https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@400;500;600;700;800&display=swap');
+
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Anek Malayalam', sans-serif;
+    background-color: $bg-color;
+    color:$white-color;
+}
+.App{
+    padding-right:15px;
+    padding-left:15px;
+    width: 100%;
+    max-width: 1370px;
+    margin: 0 auto;
+    position: relative;
+ 
+}
+.navbar{
+    grid-column: span 2;
+}
