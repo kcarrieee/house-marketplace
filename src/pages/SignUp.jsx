@@ -1,5 +1,6 @@
 import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { db } from '../firebase.config'
+import { toast } from 'react-toastify';
 import { useState } from "react"
 import {Link, useNavigate} from 'react-router-dom'
 import {RiLockPasswordLine} from 'react-icons/ri'
@@ -47,16 +48,26 @@ const SignUp = () => {
 
       navigate('/')
       
-    } catch (err) {
-      console.log(err)
+    } catch (error) {
+       toast.error('Something Went Wrong', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          })
+      }
+
       
-    }
-
-
   }
 
+
+  
+
   return (
-    <><div className="explore-block">
+    <><div className="container-sign">
       <header className="sign-header">
         <h3>Register now!</h3>
       </header>

@@ -7,7 +7,7 @@
         min-height: 312px;
         position: relative;
         object-fit: cover;
-        border-radius: $border-radius-medium;
+        border-radius: min($border-radius-medium,15px);
         background-image: url('../assets/banner-img.png');
         
         
@@ -15,13 +15,13 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            left: 5%;
-            color: #000;
-            background-color: $white-color;
+            left: min(5%,10px);
+            color: $bg-color;
+            background-color: $text-color;
             padding: 2px;
             font-weight: 500;
             font-size: clamp(1.8rem, 0.25rem + 4vw, 2.5rem);
-            line-height: 49px;
+            line-height: 120%;
         }
         
     }
@@ -30,6 +30,7 @@
     background: none;
     border: none;
     outline: none;
+    color: #000;
     background: #6EC5D8;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
     border-radius: 100px;
@@ -49,7 +50,7 @@
 }
 @media screen and (max-width: 600px) {
     .explore-block{
-        padding: 10px;
+        padding: 5px;
         width: 100%;
     }
 

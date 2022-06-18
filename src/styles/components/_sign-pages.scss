@@ -1,11 +1,23 @@
+.container-sign{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   padding-top: 20px;
+}
+
 .content-block{
     text-align: center;
     width: 100%;
+    max-width: 500px;
     padding: 30px;
 }
 
 .sign-header{
     margin-top: 30px;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
     h3{
         display: flex;
         justify-content: center;
@@ -83,6 +95,10 @@
   user-select: none;
   -webkit-user-select: none;
   width: 100%;
+  &--small{
+    width: 150px;
+
+  }
 }
 
 .button-sign:focus-visible {

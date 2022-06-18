@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { toast } from 'react-toastify';
 import {Link, useNavigate} from 'react-router-dom'
 import {RiLockPasswordLine} from 'react-icons/ri'
 import {MdVisibility} from 'react-icons/md'
@@ -33,14 +34,22 @@ const SignIn = () => {
       if(userCredential.user){
         navigate('/')
       }
-    }catch(err){
-      console.log(err)
+    }catch(error){
+      toast.error('Wrong User Credentials', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          })
     }
 
   }
 
   return (
-    <><div className="explore-block">
+    <><div className="container-sign">
       <header className="sign-header">
         <h3>Welcome Back!</h3>
       </header>

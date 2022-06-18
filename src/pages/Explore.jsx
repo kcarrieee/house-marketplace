@@ -18,6 +18,7 @@ const Explore = () => {
                 breakpoints:{
                   600:{
                     perPage:2,
+                    gap: '1rem'
                   },
                   800:{
                     perPage:3,

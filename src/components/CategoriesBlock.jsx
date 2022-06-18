@@ -8,7 +8,7 @@ const CategoriesBlock = () => {
                 perPage:2,
                 breakpoints:{
                   600:{
-                    perPage:2,
+                    perPage:1,
                   },
                   800:{
                     perPage:2,
