@@ -42,3 +42,13 @@ $button-active-blue: #1669F2;
     background: $button-active-blue;
   }
 }
+
+@media screen and (max-width: 680px) {
+  .google-btn{
+    width: fit-content;
+  }
+   .btn-text {
+    font-size: 13px;
+   }
+
+}

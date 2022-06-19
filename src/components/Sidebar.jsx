@@ -3,6 +3,7 @@ import { MdOutlineExplore,MdOutlineLocalOffer } from 'react-icons/md'
 import { BsBarChart } from 'react-icons/bs'
 import { BiMoney } from 'react-icons/bi'
 
+
 const Sidebar = ({isOpen}) => {
 
 const navigate = useNavigate();
@@ -24,11 +25,11 @@ const matchRoute = (route) =>{
                <MdOutlineLocalOffer/>
                 Offers
             </li>
-           <li className={`sidebar__link ${matchRoute('/signin')? 'active' : ''}`}  onClick={()=> navigate('/signin')}>
+           <li className={`sidebar__link ${matchRoute('/category/rent')? 'active' : ''}`}  onClick={()=> navigate('/category/rent')}>
               <BsBarChart/>
                 Rent
             </li>
-            <li  className={`sidebar__link ${matchRoute('/signup')? 'active' : ''}`}  onClick={()=> navigate('/signup')}>
+            <li  className={`sidebar__link ${matchRoute('/category/sale')? 'active' : ''}`}  onClick={()=> navigate('/category/sale')}>
                <BiMoney/>
                 Sale
             </li>

@@ -126,6 +126,8 @@
   margin-top: 30px;
 }
 .register-link{
+  
+  width: 50%;
   text-decoration: none;
   color: grey;
   line-height: 20px;
@@ -151,4 +153,16 @@
   justify-content: space-between;
   align-items: center;
   
+}
+
+@media screen and (max-width: 680px) {
+  
+  .register-link{
+    font-size: 14px;
+    line-height: 120%;
+  }
+  .forgot_password_link{
+    font-size: 14px;
+
+  }
 }
