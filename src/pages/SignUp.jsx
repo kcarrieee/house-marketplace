@@ -8,6 +8,7 @@ import {MdVisibility} from 'react-icons/md'
 import {CgProfile} from 'react-icons/cg'
 import {RiInputCursorMove} from 'react-icons/ri'
 import { doc, setDoc, serverTimestamp } from "firebase/firestore"
+import OAuth from '../components/OAuth'
 
 
 
@@ -89,9 +90,10 @@ const SignUp = () => {
           <button className="button-sign">Sign up</button>
           <Link to={'/forgot-password'} className="forgot-password-link">Forgot password?</Link>
         </form>
-
-        {/* google auth component */}
-         <Link to={'/signin'} className="register-link">Already have an account? <span>Sign in</span></Link>
+        <div className="sign_options"> 
+         <OAuth/>
+         <Link to={'/signin'} className="register-link">Already have an account? <br /> <span>Sign in</span></Link>
+         </div>
       </main>
       
       </div></>

@@ -1,11 +1,11 @@
 import { useState } from "react"
-import { toast } from 'react-toastify';
+import { toast } from 'react-toastify'
 import {Link, useNavigate} from 'react-router-dom'
 import {RiLockPasswordLine} from 'react-icons/ri'
 import {MdVisibility} from 'react-icons/md'
 import {CgProfile} from 'react-icons/cg'
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth"
-
+import OAuth from '../components/OAuth'
 
 
 const SignIn = () => {
@@ -67,9 +67,10 @@ const SignIn = () => {
           <button className="button-sign" >Sign in</button>
           <Link to={'/forgot-password'} className="forgot-password-link">Forgot password?</Link>
         </form>
-
-        {/* google auth component */}
-         <Link to={'/signup'} className="register-link">Don't have an account? <span>Sign up</span></Link>
+        <div className="sign_options">  
+          <OAuth/>
+         <Link to={'/signup'} className="register-link">Don't have an account? <br /> <span>Sign up</span></Link>
+        </div>
       </main>
       
       </div></>

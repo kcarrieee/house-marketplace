@@ -128,8 +128,27 @@
 .register-link{
   text-decoration: none;
   color: grey;
-  margin-top: 20px;
+  line-height: 20px;
   span{
     color: rgb(222, 222, 222);
   }
+}
+
+.forgot_password_link{
+  text-decoration: none;
+  color: rgb(150, 150, 150);
+  display: flex;
+  justify-content: end;
+}
+
+.reset-btn{
+  width: fit-content;
+
+}
+.sign_options{
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
 }
