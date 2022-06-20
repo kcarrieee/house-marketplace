@@ -4,12 +4,13 @@ import {BiBath} from 'react-icons/bi'
 
 
 const ListingItem = ({listing, id, onDelete}) => {
+    
   return (
     <li className="categoryListing">
         <Link to={`/category/${listing.type}/${id}`} 
         className='categoryListingLink'>
             <img 
-            src={listing.imageUrls[0]} 
+            src={listing.imgUrls[0]} 
             alt={listing.name} 
             className='categoryListing__img'/>
             <div className="categoryListing__details">
@@ -19,7 +20,7 @@ const ListingItem = ({listing, id, onDelete}) => {
                 <p className="categoryListing__details__location">
                     {listing.location}
                 </p>
-                <p className="categoryListing__details__price">
+                <p className={listing.offer ? 'categoryListing__details__price offer' : 'categoryListing__details__price'}>
                     ${listing.offer ? listing.discountedPrice : listing.regularPrice }
                     {listing.type === 'rent' && ' / Month'}
                 </p>

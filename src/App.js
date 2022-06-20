@@ -10,6 +10,7 @@ import SignUp from './pages/SignUp';
 import ForgotPassword from './pages/ForgotPassword';
 import Navbar from './components/Navbar';
 import PrivateRoute from './components/PrivateRoute';
+import CreateListing from './pages/CreateListing';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Route path='/category/:categoryName' element={<Category/>}/>
         <Route path='/signup' element={<SignUp/>}/>
         <Route path='/forgot-password' element={<ForgotPassword/>}/>
+        <Route path='/create-listing' element={<CreateListing/>}/>
       </Routes>
       {/* <Footer/> */}
     </Router>

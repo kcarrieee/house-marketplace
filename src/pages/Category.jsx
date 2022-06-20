@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import { collection, getDocs, query, where, orderBy, limit, startAfter, Timestamp} from "firebase/firestore"
+import { collection, getDocs, query, where, orderBy, limit} from "firebase/firestore"
 import { db } from '../firebase.config'
 import { toast } from "react-toastify"
 import Spinner from "../components/Spinner"
@@ -30,19 +30,28 @@ const Category = () => {
                     data: doc.data()
                 })
             })
+            
             setListings(listings)
             setLoading(false)
 
             
         } catch (error) {
-            toast.error('Could not get listings')
+            toast.error('Could not get listings',{
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            })
             
         }
     }
 
     useEffect(()=>{
         fetchListings()
-
+        // eslint-disable-next-line
     },[params.categoryName])
 
   return (

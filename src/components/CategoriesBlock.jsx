@@ -32,7 +32,7 @@ const CategoriesBlock = () => {
                     </Link>
                   </SplideSlide>
                    <SplideSlide>
-                    <Link to={'/category/sell'}>
+                    <Link to={'/category/sale'}>
                     <div className="category-block">
                     <img src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1730&q=80" alt="sell" />
                      <h3>Places for sell</h3>

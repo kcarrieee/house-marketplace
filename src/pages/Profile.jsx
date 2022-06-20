@@ -2,8 +2,10 @@ import {  getAuth, updateProfile } from "firebase/auth"
 import { useState } from "react"
 import { updateDoc, doc } from "firebase/firestore"
 import { db } from '../firebase.config'
-import {useNavigate} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import { toast } from 'react-toastify';
+import {BsArrowRight} from 'react-icons/bs'
+import {BiHomeCircle} from 'react-icons/bi'
 
 
 const Profile = () => {
@@ -93,6 +95,7 @@ const Profile = () => {
 
           </form>
         </div>
+               <Link to='/create-listing' className="create__listing_btn"><BiHomeCircle/> <p> Create a listing </p> <BsArrowRight/></Link>
       </main>
     </div>
   )
