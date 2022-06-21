@@ -9,10 +9,12 @@ const ListingItem = ({listing, id, onDelete}) => {
     <li className="categoryListing">
         <Link to={`/category/${listing.type}/${id}`} 
         className='categoryListingLink'>
+            <div className='categoryListing__img'>
             <img 
             src={listing.imgUrls[0]} 
             alt={listing.name} 
-            className='categoryListing__img'/>
+            />
+            </div>
             <div className="categoryListing__details">
                 <p className="categoryListing__details__name">
                     {listing.name}

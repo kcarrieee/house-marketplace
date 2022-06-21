@@ -4,25 +4,32 @@
 .categoryListingsGrid{
     display: grid;
     grid-template-columns: auto;
+    gap: 20px;
 
 }
 .categoryListing{
     width: 100%;
     list-style: none;
-    margin-top: 20px;
     background-color:  rgb(40, 40, 40);
     padding: 10px;
     border-radius: 10px;
    
     &__img{
-        width: 50%;
+        width: 100%;
         height: 180px;
         object-fit: cover;
         border-radius: 10px;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
     }
     .categoryListingLink{
-        display: flex;
-        justify-content: space-between;
+        display: grid;
+        justify-content:flex-start;
+        grid-template-columns: 1fr 1fr;
         text-decoration: none;
         color: white;
     }
