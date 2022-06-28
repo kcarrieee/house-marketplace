@@ -21,10 +21,20 @@ body,html{
     max-width: 1370px;
     margin: 0 auto;
     position: relative;
-    // display: grid;
-    // grid-template-columns: 100%;
-    // grid-template-rows: auto 1fr auto;
-    // min-height: 100vh;
+ 
  
 }
 
+.load-more-btn{
+    background: none;
+    outline: none;
+    border: none;
+    font-size: 14px;
+    background-color: rgb(49, 49, 49);
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 15px;
+    margin: 20px;
+  
+    
+}

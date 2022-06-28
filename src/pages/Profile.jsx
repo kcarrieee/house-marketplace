@@ -1,16 +1,19 @@
 import {  getAuth, updateProfile } from "firebase/auth"
-import { useState } from "react"
-import { updateDoc, doc } from "firebase/firestore"
+import { useState, useEffect } from "react"
+import { updateDoc, doc, collection, getDocs, query, where, orderBy, deleteDoc } from "firebase/firestore"
 import { db } from '../firebase.config'
 import {Link, useNavigate} from 'react-router-dom'
 import { toast } from 'react-toastify';
 import {BsArrowRight} from 'react-icons/bs'
 import {BiHomeCircle} from 'react-icons/bi'
+import ListingItem from '../components/ListingItem'
 
 
 const Profile = () => {
     const auth = getAuth()
     const navigate = useNavigate()
+    const [loading, setLoading]= useState(true)
+    const [listings, setListings]= useState(null)
 
     const [changeDetails, setChangeDetails] = useState(false)
     const [formData, setFormData] = useState({
@@ -58,6 +61,34 @@ const Profile = () => {
       }))
     }
 
+    const onDelete = async (listingId) => {
+      await deleteDoc(doc( db, 'listings', listingId ))
+      const updatedListings = listings.filter((listing)=> listing.id !== listingId)
+      setListings(updatedListings)
+      toast.success('Listing was deleted')
+
+
+    }
+
+    useEffect(()=>{
+      const FetchUserlistings= async() => {
+        const listingRef = collection(db, 'listings' )
+        const q = query(listingRef,where('userRef', '==', auth.currentUser.uid),
+        orderBy('timestamp', 'desc'))
+
+        const querySpan = await getDocs(q)
+        const listings = []
+        querySpan.forEach(doc => (listings.push({
+          id: doc.id,
+          data: doc.data(),
+        })))
+
+        setListings(listings)
+        setLoading(false)
+
+      }
+      FetchUserlistings()
+    },[auth.currentUser.uid])
 
   return (
     <div className="profile">
@@ -96,6 +127,24 @@ const Profile = () => {
           </form>
         </div>
                <Link to='/create-listing' className="create__listing_btn"><BiHomeCircle/> <p> Create a listing </p> <BsArrowRight/></Link>
+              {!loading && listings?.length > 0 && (
+                <div className="profile_listings">
+                  <h3>Your listings</h3>
+                  <ul>
+                    {listings.map(listing =>(
+                      <li>
+                      <ListingItem 
+                      key={listing.id} 
+                      listing={listing.data} 
+                      id={listing.id}
+                      onDelete={()=> onDelete(listing.id)}
+                      />
+                      </li>
+
+                    ))}
+                  </ul>
+                </div>
+              )}
       </main>
     </div>
   )
