@@ -4,7 +4,7 @@ import { BsBarChart } from 'react-icons/bs'
 import { BiMoney } from 'react-icons/bi'
 
 
-const Sidebar = ({isOpen}) => {
+const Sidebar = ({isOpen,setIsOpen}) => {
 
 const navigate = useNavigate();
 const location = useLocation();
@@ -13,23 +13,30 @@ const matchRoute = (route) =>{
       return true;
     }
   }
+
+  const handleClickBar=(url)=>{
+    setIsOpen(false)
+    navigate(`${url}`)
+
+  }
+
   return (
      
       <ul className={`${isOpen ? 'open': 'sidebar'}`}>
-            <li className={`sidebar__link ${matchRoute('/')? 'active' : ''}`} onClick={()=> navigate('/')}>
+            <li className={`sidebar__link ${matchRoute('/')? 'active' : ''}`} onClick={()=> handleClickBar('/')}>
                 <MdOutlineExplore/>
                 Explore
             </li>
            
-            <li className={`sidebar__link ${matchRoute('/offers')? 'active' : ''}`}  onClick={()=> navigate('/offers')} >
+            <li className={`sidebar__link ${matchRoute('/offers')? 'active' : ''}`}  onClick={()=> handleClickBar('/offers')} >
                <MdOutlineLocalOffer/>
                 Offers
             </li>
-           <li className={`sidebar__link ${matchRoute('/category/rent')? 'active' : ''}`}  onClick={()=> navigate('/category/rent')}>
+           <li className={`sidebar__link ${matchRoute('/category/rent')? 'active' : ''}`}  onClick={()=> handleClickBar('/category/rent')}>
               <BsBarChart/>
                 Rent
             </li>
-            <li  className={`sidebar__link ${matchRoute('/category/sale')? 'active' : ''}`}  onClick={()=> navigate('/category/sale')}>
+            <li  className={`sidebar__link ${matchRoute('/category/sale')? 'active' : ''}`}  onClick={()=> handleClickBar('/category/sale')}>
                <BiMoney/>
                 Sale
             </li>

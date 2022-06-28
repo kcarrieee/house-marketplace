@@ -20,7 +20,7 @@ const Navbar = () => {
         </svg> House Market</div>
         <div onClick={()=> navigate('/profile')} className="profile-link"><CgProfile/>profile</div>
      </nav>
-    <Sidebar isOpen={isOpen} /> 
+    <Sidebar isOpen={isOpen} setIsOpen={setIsOpen}/> 
     </div>
    
   )

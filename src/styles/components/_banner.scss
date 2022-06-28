@@ -7,7 +7,7 @@
         min-height: 312px;
         position: relative;
         object-fit: cover;
-        border-radius: min($border-radius-medium,15px);
+        border-radius: min($border-radius-medium,40px);
         background-image: url('../assets/banner-img.png');
         
         
@@ -15,7 +15,7 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            left: min(5%,10px);
+            left: 5%;
             color: $bg-color;
             background-color: $text-color;
             padding: 2px;

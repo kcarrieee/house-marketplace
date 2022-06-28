@@ -49,8 +49,10 @@ const Listing = () => {
                 drag:'free',
                 }}>
             {listing.imgUrls.map((img, index)=>(
-            < SplideSlide key={index}>
-                <img src={listing.imgUrls[index]} alt="house"/>
+            < SplideSlide key={index} >
+                <div className='listing-img'>
+                <img src={listing.imgUrls[index]} alt="house"  />
+                </div>
             </ SplideSlide>
             ))}
         </Splide>

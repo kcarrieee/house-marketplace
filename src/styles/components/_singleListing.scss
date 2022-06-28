@@ -6,6 +6,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    top: 130px;
+    right: 40px;
 }
 .link-copy-message{
     background-color: rgb(40, 40, 40);
@@ -23,6 +26,7 @@
     &__name{
          font-weight: 500;
          font-size: 2rem;
+         margin-top: 20px;
     }
     &__location{
         color: rgb(90, 90, 90);
@@ -47,6 +51,24 @@
     }
     &__details{
         list-style: none;
+    }
+}
+.listing-img{
+    position: relative;
+    width: 100%;
+    height: 500px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+
+    @media screen and (max-width: 680px) {
+        height: 300px;
+
+    }
+        
+    
+    img{
+        object-fit: cover;
+        width: 100%;
     }
 }
 .sale-and-discount{
