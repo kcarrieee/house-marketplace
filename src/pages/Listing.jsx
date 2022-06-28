@@ -92,7 +92,7 @@ const Listing = () => {
                 </li>
             </ul>
             {auth.currentUser?.uid !== listing.userRef && (
-                <Link to={`/contact/${listing.userRef}?listingName=${listing.name}`}>Contact Landlord</Link>
+                <Link to={`/contact/${listing.userRef}?listingName=${listing.name}`} className='contact-link-landlord'>Contact Landlord</Link>
             ) }
 
         </div>

@@ -34,7 +34,6 @@ function App() {
          <Route path='/category/:categoryName/:listingId' element={<Listing/>}/>
           <Route path='/contact/:landlordId' element={<Contact/>}/>
       </Routes>
-      {/* <Footer/> */}
     </Router>
     <ToastContainer
        position="top-right"
